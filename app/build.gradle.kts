@@ -87,17 +87,12 @@ dependencies {
     //Compose dependencies
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
     implementation("androidx.compose.material:material-icons-extended:1.5.4")
-    implementation("com.google.accompanist:accompanist-flowlayout:0.17.0")
-    implementation("androidx.paging:paging-compose:3.2.1")
     implementation("androidx.activity:activity-compose:1.8.2")
     implementation("com.google.accompanist:accompanist-swiperefresh:0.24.2-alpha")
 
     //Compose Nav Destinations
     implementation("io.github.raamcosta.compose-destinations:core:1.9.58")
     ksp("io.github.raamcosta.compose-destinations:ksp:<version>")
-
-    //Coil
-    implementation("io.coil-kt:coil-compose:2.5.0")
 
     //Hilt
     implementation("com.google.dagger:hilt-android:2.50")
