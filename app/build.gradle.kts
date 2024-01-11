@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.js.inline.util.collectReferencedNames
-
 plugins {
     id("com.android.application")
     id("com.google.devtools.ksp")
