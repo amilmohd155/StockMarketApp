@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
     id("kotlin-parcelize")
     kotlin("android")
     kotlin("kapt")
@@ -92,12 +93,11 @@ dependencies {
 
     //Compose Nav Destinations
     implementation("io.github.raamcosta.compose-destinations:core:1.9.58")
-    ksp("io.github.raamcosta.compose-destinations:ksp:<version>")
+    ksp("io.github.raamcosta.compose-destinations:ksp:1.9.58")
 
     //Hilt
     implementation("com.google.dagger:hilt-android:2.50")
     kapt("com.google.dagger:hilt-compiler:2.50")
-    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
     kapt("androidx.hilt:hilt-compiler:1.1.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
 
@@ -114,4 +114,8 @@ dependencies {
     // Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:2.6.1")
 
+}
+
+kapt {
+    correctErrorTypes = true
 }
