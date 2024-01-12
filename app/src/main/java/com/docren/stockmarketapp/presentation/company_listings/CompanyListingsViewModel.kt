@@ -9,6 +9,7 @@ import com.docren.stockmarketapp.domain.repository.StockRepository
 import com.docren.stockmarketapp.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -28,12 +29,17 @@ class CompanyListingsViewModel @Inject constructor(
                 getCompanyListings(fetchFromRemote = true)
             }
             is CompanyListingsEvent.onSearchQueryChange -> {
-
+                state = state.copy(searchQuery = event.query)
+                searchJob?.cancel()
+                searchJob = viewModelScope.launch {
+                    delay(500L)
+                    getCompanyListings()
+                }
             }
         }
     }
 
-    fun getCompanyListings(
+    private fun getCompanyListings(
         query: String = state.searchQuery.lowercase(),
         fetchFromRemote: Boolean = false
     ) {
