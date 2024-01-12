@@ -10,7 +10,6 @@ import com.docren.stockmarketapp.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -22,6 +21,10 @@ class CompanyListingsViewModel @Inject constructor(
     var state by mutableStateOf(CompanyListingsState())
 
     private var searchJob: Job? = null
+
+    init {
+        getCompanyListings()
+    }
 
     fun onEvent(event: CompanyListingsEvent) {
         when(event) {
