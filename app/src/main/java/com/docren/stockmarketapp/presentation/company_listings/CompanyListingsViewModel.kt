@@ -23,12 +23,14 @@ class CompanyListingsViewModel @Inject constructor(
     private var searchJob: Job? = null
 
     init {
+        println("Viewmodel")
         getCompanyListings()
     }
 
     fun onEvent(event: CompanyListingsEvent) {
         when(event) {
             is CompanyListingsEvent.Refresh -> {
+                println("Refreshing")
                 getCompanyListings(fetchFromRemote = true)
             }
             is CompanyListingsEvent.onSearchQueryChange -> {

@@ -63,6 +63,7 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    ndkVersion = "23.1.7779620"
 }
 
 dependencies {
@@ -83,17 +84,17 @@ dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 
     //OpenCSV
-    implementation("com.opencsv:opencsv:5.5.2")
+    implementation("com.opencsv:opencsv:5.9")
 
     //Compose dependencies
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
     implementation("androidx.compose.material:material-icons-extended:1.5.4")
     implementation("androidx.activity:activity-compose:1.8.2")
-    implementation("com.google.accompanist:accompanist-swiperefresh:0.24.2-alpha")
+    implementation("com.google.accompanist:accompanist-swiperefresh:0.32.0")
 
     //Compose Nav Destinations
-    implementation("io.github.raamcosta.compose-destinations:core:1.9.58")
-    ksp("io.github.raamcosta.compose-destinations:ksp:1.9.58")
+    implementation("io.github.raamcosta.compose-destinations:core:1.9.59")
+    ksp("io.github.raamcosta.compose-destinations:ksp:1.9.59")
 
     //Hilt
     implementation("com.google.dagger:hilt-android:2.50")
@@ -104,8 +105,8 @@ dependencies {
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.3")
-    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
+    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.12")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.12")
 
     // Room
     implementation("androidx.room:room-runtime:2.6.1")
