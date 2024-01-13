@@ -9,6 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.InputStream
 import java.io.InputStreamReader
+import java.time.LocalDate
 import java.time.LocalDateTime
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -35,7 +36,7 @@ class IntraDayInfoParser @Inject constructor(): CSVParser<IntraDayInfo> {
 
                 }
                 .filter {
-                    it.date.dayOfMonth == LocalDateTime.now().minusDays(1).dayOfMonth
+                    it.date.dayOfMonth == LocalDate.now().minusDays(1).dayOfMonth
                 }
                 .sortedBy {
                     it.date.hour

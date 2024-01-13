@@ -11,7 +11,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
-import com.docren.stockmarketapp.presentation.company_listings.NavGraphs
+import com.docren.stockmarketapp.presentation.NavGraphs
 import com.docren.stockmarketapp.ui.theme.StockMarketAppTheme
 import com.ramcosta.composedestinations.DestinationsNavHost
 import dagger.hilt.android.AndroidEntryPoint

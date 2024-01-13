@@ -8,10 +8,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.docren.stockmarketapp.domain.repository.StockRepository
 import com.docren.stockmarketapp.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
+@HiltViewModel
 class CompanyInfoViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
     private val repository: StockRepository
@@ -22,6 +23,9 @@ class CompanyInfoViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             val symbol = savedStateHandle.get<String>("symbol") ?: return@launch
+
+            println("symbol:: $symbol")
+
             state = state.copy(isLoading = true)
 
             val companyInfoResult = async {  repository.getCompanyInfo(symbol) }

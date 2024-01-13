@@ -19,6 +19,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.docren.stockmarketapp.presentation.destinations.CompanyInfoScreenDestination
+import com.docren.stockmarketapp.presentation.destinations.CompanyListingScreenDestination
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.ramcosta.composedestinations.annotation.Destination
@@ -74,7 +76,9 @@ fun CompanyListingScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-                                //TODO
+                                navigator.navigate(
+                                    CompanyInfoScreenDestination(company.symbol)
+                                )
                             }
                             .padding(16.dp)
                     )
